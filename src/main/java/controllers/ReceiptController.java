@@ -28,28 +28,12 @@ public class ReceiptController {
         return receipts.insert(receipt.merchant, receipt.amount);
     }
 
-    @PUT
-    @Path("/tags/{tag}")
-    public void toggleTag(@PathParam("tag") String tagName, int id) {
-        receipts.update(id, tagName);
-    }
-
     @GET
     public List<ReceiptResponse> getReceipts() {
         List<ReceiptsRecord> receiptRecords = receipts.getAllReceipts();
         return receiptRecords.stream().map(ReceiptResponse::new).collect(toList());
     }
 
-    @GET
-    @Path("/tags/{tag}")
-    public List<ReceiptResponse> getReceiptsByTag(@PathParam("tag") String tagName) {
-        return receipts.getByTag(tagName).stream().map(ReceiptResponse::new).collect(toList());
-    }
 
-    @GET
-    @Path("/netid")
-    public String netid() {
-        return "yc2378";
-    }
 
 }
