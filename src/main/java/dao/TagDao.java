@@ -10,6 +10,7 @@ import java.util.List;
 
 import static com.google.common.base.Preconditions.checkState;
 import static generated.Tables.RECEIPTS;
+import static generated.Tables.TAGS;
 import static org.jooq.impl.DSL.*;
 
 

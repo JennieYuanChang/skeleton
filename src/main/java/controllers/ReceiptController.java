@@ -30,10 +30,6 @@ public class ReceiptController {
 
     @GET
     public List<ReceiptResponse> getReceipts() {
-        List<ReceiptsRecord> receiptRecords = receipts.getAllReceipts();
-        return receiptRecords.stream().map(ReceiptResponse::new).collect(toList());
+        return receipts.getAllReceipts().stream().collect(toList());
     }
-
-
-
 }
